@@ -1,0 +1,53 @@
+<!-- Bootstrap core CSS -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+<html>
+  <head>
+
+     <style type="text/css">
+     	.col-centered{
+    	float: none;
+    	margin: 0 auto;
+         }
+	.center
+	{
+	margin:auto;
+	width:70%;
+	text-align:center;
+	}
+
+	.no-break
+           {
+		word-wrap:break-word;
+	   }
+     </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EasyDownloader</title>
+  </head>
+  <body>
+   <div class="center">
+   <h1>EasyDownloader <small>Beta</small></h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+       <div class="alert alert-warning alert-dismissable">
+ 	 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+ 	 <strong class="no-break">{{message}}
+	</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    </div>
+    {% block content %}{% endblock %}
+  </body>
+</html>

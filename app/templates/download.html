@@ -1,0 +1,32 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-horizontal"  action="" method="post" name="download" role="form">
+    {{form.hidden_tag()}}
+	<div class="container">
+	<div class="row center">
+	<div class="form-group">
+	 {% if form.errors %}
+         <div class="alert alert-danger alert-dismissable">
+  		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  		<strong class="no-break">Warning!</strong> Please fill in all the input values.
+	</div>
+	<br>
+	{% endif %}
+        {{form.url(class="form-control",placeholder="Enter URL",style="width:100%")}}
+	{% for mode in form.download_mode %}
+	<div class="radio-inline">
+        <label>
+        {{mode}}
+        {{mode.label}}
+        </label>
+        </div>
+	{% endfor %}
+	<br>
+     <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-save"></span>Download</button>
+    </div>
+    </div>
+    </div>
+</form>
+{% endblock %}
