@@ -1,12 +1,12 @@
 <!-- extend from base layout -->
 {% extends "base.html" %}
 
-{%block title%}
-<h1>EasyDownloader <small>Beta</small></h1>
+{% block title %}
+<h1>Streamming <small>Beta</small></h1>
 {% endblock %}
 
 {% block content %}
-<form class="form-horizontal"  action="" method="post" name="download" role="form">
+<form class="form-horizontal"  action="" method="post" name="streaming" role="form">
     {{form.hidden_tag()}}
 	<div class="container">
 	<div class="row center">
@@ -19,16 +19,8 @@
 	<br>
 	{% endif %}
         {{form.url(class="form-control",placeholder="Enter URL",style="width:100%")}}
-	{% for mode in form.download_mode %}
-	<div class="radio-inline">
-        <label>
-        {{mode}}
-        {{mode.label}}
-        </label>
-        </div>
-	{% endfor %}
 	<br>
-     <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-save"></span>Download</button>
+     <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-save"></span>Stream</button>
     </div>
     </div>
     </div>

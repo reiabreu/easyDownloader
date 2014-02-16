@@ -32,11 +32,11 @@
      </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EasyDownloader</title>
+    <title>Rasp Utils</title>
   </head>
   <body>
    <div class="center">
-   <h1>EasyDownloader <small>Beta</small></h1>
+   {%block title%}{% endblock %}
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
